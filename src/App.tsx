@@ -1,20 +1,19 @@
 import React from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
 import './services/firebase'
 
-import Wrapper from './components/Wrapper'
+import AddRoom from './pages/AddRoom'
+import Home from './pages/Home'
 import GlobalStyle from './global/style'
-import askLogo from './images/ask.png'
 
 function App() {
   return (
     <React.Fragment>
       <GlobalStyle />
-      <Wrapper>
-        <div className="logo">
-          <img src={askLogo} alt="Ask me Bro" title="Ask me Bro" />-me-bro
-        </div>
-        <p className="comming-soon">comming soon ...</p>
-      </Wrapper>
+      <BrowserRouter>
+        <Route path="/" exact component={Home} />
+        <Route path="/rooms/add" component={AddRoom} />
+      </BrowserRouter>
     </React.Fragment>
   )
 }
