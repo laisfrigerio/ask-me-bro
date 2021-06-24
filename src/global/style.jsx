@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-	@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
 
 	* {
 		border: 0;
@@ -13,9 +12,14 @@ const GlobalStyle = createGlobalStyle`
 
   body {
 		background-color: #f8f8f8;
+		color: #29292e;
 		height: 100vh;
 		width: 100%;
   }
+
+	body, input, textarea, button {
+		font: 400 16px 'Roboto', sans-serif;
+	}
 `
 
 export default GlobalStyle
