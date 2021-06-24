@@ -17,6 +17,7 @@ Toda pergunta tem uma resposta. Aprenda e compartilhe conhecimento com outras pe
 - styled-components
 - firebase
 - Sign with Google (Firebase Authentication)
+- Git flow
 
 ## Figma
 
