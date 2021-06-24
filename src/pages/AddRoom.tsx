@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../hooks/useAuth'
 
 import PageAuth from '../components/PageAuth'
 import TheAside from '../ui/TheAside'
@@ -8,12 +9,15 @@ import TheButton from '../ui/TheButton'
 import logoImg from '../assets/images/logo.svg'
 
 export default function AddRoom () {
+  const { user } = useAuth()
+
   return (
     <PageAuth>
       <TheAside />
       <main>
         <div className="main-content">
           <img src={logoImg} alt="Ask me Bro" />
+          <h1>{user?.name}</h1>
           <h2>Criar uma nova sala</h2>
           <form>
             <input

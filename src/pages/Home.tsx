@@ -1,7 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { firebase, auth } from '../services/firebase'
-
+import { useAuth } from '../hooks/useAuth'
 import PageAuth from '../components/PageAuth'
 import TheAside from '../ui/TheAside'
 import TheButton from '../ui/TheButton'
@@ -11,15 +10,12 @@ import goggleIconImg from '../assets/images/google-icon.svg'
 
 export default function Home () {
   const history = useHistory()
+  const { user, signInWithGoogle } = useAuth()
 
-  const handleCreateRoom = () => {
-    const provider = new firebase.auth.GoogleAuthProvider()
-
-    auth.signInWithPopup(provider)
-      .then((response) => {
-        console.log(response)
-      })
-      .catch((err) => console.log(err))
+  async function handleCreateRoom () {
+    if (!user) {
+      await signInWithGoogle()
+    }
 
     history.push('/rooms/add')
   }
