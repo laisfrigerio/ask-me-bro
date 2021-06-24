@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Wrapper = styled.main`
-	align-items: center;
+	/* align-items: center;
 	display: flex;
 	flex-direction: column;
 	font-size: 30px;
@@ -17,7 +17,7 @@ const Wrapper = styled.main`
 	.comming-soon {
 		color: #C4C4C4;
 		font-size: 18px;
-	}
+	} */
 `
 
 export default Wrapper
