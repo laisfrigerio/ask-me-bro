@@ -1,5 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import { firebase, auth } from '../services/firebase'
 
 import PageAuth from '../components/PageAuth'
 import TheAside from '../ui/TheAside'
@@ -11,7 +12,15 @@ import goggleIconImg from '../assets/images/google-icon.svg'
 export default function Home () {
   const history = useHistory()
 
-  const navigateTo = () => {
+  const handleCreateRoom = () => {
+    const provider = new firebase.auth.GoogleAuthProvider()
+
+    auth.signInWithPopup(provider)
+      .then((response) => {
+        console.log(response)
+      })
+      .catch((err) => console.log(err))
+
     history.push('/rooms/add')
   }
 
@@ -21,7 +30,7 @@ export default function Home () {
       <main>
         <div className="main-content">
           <img src={logoImg} alt="Ask me Bro" />
-          <TheButton onClick={navigateTo} className="btn-google create-room">
+          <TheButton onClick={handleCreateRoom} className="btn-google create-room">
             <img src={goggleIconImg} alt="Logo do Google" />
             Crie sua sala com o Google
           </TheButton>
