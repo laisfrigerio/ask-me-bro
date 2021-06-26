@@ -19,7 +19,6 @@ export default function Room () {
   const roomId = params.id
   const { user } = useAuth()
   const { questions, roomName } = useRoom(roomId)
-
   const [question, setQuestion] = useState('')
 
   async function handleAddQuestion (event: FormEvent) {

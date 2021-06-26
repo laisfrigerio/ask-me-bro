@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import UserInfo from './UserInfo'
+import { QuestionType } from '../const/types'
 
 const Wrapper = styled.div`
 	background: #fefefe;
@@ -30,14 +31,6 @@ const Wrapper = styled.div`
 		}
 	}
 `
-
-type QuestionType = {
-	author: {
-		name: string,
-		avatar: string
-	},
-	content: string,
-}
 
 export default function Question ({ author, content }: QuestionType) {
 	return (

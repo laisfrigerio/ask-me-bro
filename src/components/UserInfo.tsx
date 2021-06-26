@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { UserType } from '../const/types'
 
 const Wrapper = styled.div`
 	align-items: center;
@@ -18,11 +19,6 @@ const Wrapper = styled.div`
 		margin-left: 8px;
 	}
 `
-
-type UserType = {
-	name: string,
-	avatar: string
-}
 
 export default function UserInfo ({ name, avatar }: UserType) {
 	return (

@@ -1,38 +1,9 @@
 import { useEffect, useState } from 'react'
 import { database } from "../services/firebase"
-
-type QuestionsType = {
-  id: string,
-  author: {
-    name: string,
-    avatar: string,
-  },
-  content: string,
-  isHighlighted: boolean,
-  isAnswered: boolean,
-}
-
-type FirebaseQuestionsProps = Record<
-  string,
-  {
-    author: {
-      name: string,
-      avatar: string,
-    };
-    content: string,
-    isAnswered: boolean,
-    isHighlighted: boolean,
-    likes: Record<
-      string,
-      {
-        authorId: string,
-      }
-    >,
-  }
->
+import { FirebaseQuestionType, QuestionType } from '../const/types'
 
 export function useRoom (roomId: string) {
-  const [questions, setQuestions] = useState<QuestionsType[]>([])
+  const [questions, setQuestions] = useState<QuestionType[]>([])
   const [roomName, setRoomName] = useState('')
 
   useEffect(() => {
@@ -40,7 +11,7 @@ export function useRoom (roomId: string) {
 
     roomRef.on('value', room => {
       const databaseRoom = room.val();
-      const firebaseQuestions: FirebaseQuestionsProps = databaseRoom.questions ?? {};
+      const firebaseQuestions: FirebaseQuestionType = databaseRoom.questions ?? {};
 
       const parsedQuestions = Object.entries(firebaseQuestions).map(([key, value]) => {
         return {
