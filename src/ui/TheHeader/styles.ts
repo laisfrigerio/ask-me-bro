@@ -25,6 +25,28 @@ const TheHeaderWrapper = styled.header`
 			max-height: 45px;
 		}
 	}
+
+	.header-shut-down-ico {
+		display: none;
+	}
+
+	.header-shut-down-text {
+		display: block;
+	}
+
+	@media screen and (max-width: 654px) {
+		.btn-shut-down {
+			padding: 0 16px;
+		}
+
+		.header-shut-down-ico {
+			display: block;
+		}
+
+		.header-shut-down-text {
+			display: none;
+		}
+	}
 `
 
 export default TheHeaderWrapper

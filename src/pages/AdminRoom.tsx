@@ -66,9 +66,14 @@ export default function AdminRoom () {
       <TheHeader>
         {user?.id === roomAuthorId && (
           <TheButton
+            className="btn-shut-down"
             isOutlined
+            title="Encerrar sala"
             onClick={handleShutDownRoom}
-          >Encerrar</TheButton>
+          >
+            <i className="header-shut-down-ico far fa-times-circle"></i>
+            <span className="header-shut-down-text">Encerrar</span>
+          </TheButton>
         )}
       </TheHeader>
       <TheMainContent>
