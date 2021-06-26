@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
 		box-sizing: border-box;
 		font-family: 'Overpass', sans-serif;
 		margin: 0;
+		outline: 0;
 		padding: 0;
 	}
 
