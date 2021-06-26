@@ -13,7 +13,6 @@ const Wrapper = styled.button`
   font-weight: 500;
   height: 50px;
   justify-content: center;
-  margin-top: 64px;
   padding: 0 32px;
   transition: filter 0.2s;
 

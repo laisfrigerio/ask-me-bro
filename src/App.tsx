@@ -1,9 +1,10 @@
 import React from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './services/firebase'
 
 import { AuthContextProvider } from './context/AuthContext'
 import AddRoom from './pages/AddRoom'
+import Room from './pages/Room'
 import Home from './pages/Home'
 import GlobalStyle from './global/style'
 
@@ -14,8 +15,11 @@ function App() {
       <GlobalStyle />
       <BrowserRouter>
         <AuthContextProvider>
-          <Route path="/" exact component={Home} />
-          <Route path="/rooms/add" component={AddRoom} />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/rooms/add" component={AddRoom} />
+            <Route path="/rooms/:id" component={Room} />
+          </Switch>
         </AuthContextProvider>
       </BrowserRouter>
     </React.Fragment>
