@@ -4,6 +4,7 @@ import './services/firebase'
 
 import { AuthContextProvider } from './context/AuthContext'
 import AddRoom from './pages/AddRoom'
+import AdminRoom from './pages/AdminRoom'
 import Room from './pages/Room'
 import Home from './pages/Home'
 import GlobalStyle from './global/style'
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/rooms/add" component={AddRoom} />
             <Route path="/rooms/:id" component={Room} />
+            <Route path="/admin/rooms/:id" component={AdminRoom} />
           </Switch>
         </AuthContextProvider>
       </BrowserRouter>
