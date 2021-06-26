@@ -1,8 +1,6 @@
-
-import React from 'react'
 import styled from 'styled-components'
 
-const Wrapper = styled.main`
+const TheMainContentWrapper = styled.main`
 	margin: 0 auto;
 	max-width: 800px;
 	padding: 0 15px;
@@ -45,11 +43,4 @@ const Wrapper = styled.main`
 		text-decoration: 14px;
 	}
 `
-
-export default function Header (props: { children: React.ReactNode }) {
-	return (
-		<Wrapper>
-			{props.children}
-		</Wrapper>
-	)
-}
+export default TheMainContentWrapper

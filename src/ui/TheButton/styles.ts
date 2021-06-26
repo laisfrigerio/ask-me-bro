@@ -1,8 +1,6 @@
-import React from 'react'
-import { ButtonHTMLAttributes } from 'react'
 import styled from 'styled-components'
 
-const Wrapper = styled.button`
+const TheButtonWrapper = styled.button`
   align-items: center;
   background: #835afd;
   border: 0;
@@ -40,17 +38,4 @@ const Wrapper = styled.button`
   }
 `
 
-type ButtonType = ButtonHTMLAttributes<HTMLButtonElement> & {
-  isOutlined?: boolean,
-}
-
-export default function TheButton ({ isOutlined = false, ...props }: ButtonType) {
-  return (
-    <Wrapper
-      className={`btn ${isOutlined ? 'outline' : ''}`}
-      {...props}
-    >
-      {props.children}
-    </Wrapper>
-  )
-}
+export default TheButtonWrapper

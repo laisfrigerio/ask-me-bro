@@ -1,8 +1,6 @@
-import React from 'react'
 import styled from 'styled-components'
-import illustrationImg from '../assets/images/illustration.svg'
 
-const Wrapper = styled.aside`
+const TheAsideWrapper = styled.aside`
 	background-color: #835afd;
 	color: #fff;
 	display: flex;
@@ -29,12 +27,4 @@ const Wrapper = styled.aside`
 	}
 `
 
-export default function TheAside () {
-	return (
-		<Wrapper>
-			<img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
-			<strong>Crie salas de Q&amp;A ao-vivo</strong>
-			<p>Tire as dúvidas da sua audiência em tempo-real</p>
-		</Wrapper>
-	)
-}
+export default TheAsideWrapper

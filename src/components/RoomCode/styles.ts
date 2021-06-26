@@ -1,8 +1,6 @@
-import React from 'react'
 import styled from 'styled-components'
-import copyImg from '../assets/images/copy.svg'
 
-const Wrapper = styled.button`
+const RoomCodeWrapper = styled.button`
 	background: #fff;
 	border: 1px solid #835afd;
 	border-radius: 8px;
@@ -33,21 +31,4 @@ const Wrapper = styled.button`
 	}
 `
 
-type ParamsType = {
-	code: string
-}
-
-export default function RoomCode ({ code }: ParamsType) {
-	function copyToClipboard () {
-		navigator.clipboard.writeText(code)
-	}
-
-	return (
-		<Wrapper onClick={copyToClipboard}>
-			<div>
-				<img src={copyImg} alt="Copy room code to clipboard" />
-			</div>
-			<span>Sala #{code}</span>
-		</Wrapper>
-	)
-}
+export default RoomCodeWrapper
