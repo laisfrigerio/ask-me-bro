@@ -5,6 +5,13 @@ const TheMainContentWrapper = styled.main`
 	max-width: 800px;
 	padding: 0 15px;
 
+	&.is-loading {
+		align-items: center;
+		display: flex;
+    justify-content: center;
+    margin-top: 100px;
+	}
+
 	form {
 		textarea {
 			background: #fefefe;

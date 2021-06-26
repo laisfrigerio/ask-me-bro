@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from "react"
+import React, { FormEvent, useEffect, useState } from "react"
 import { useParams, useHistory } from "react-router-dom"
 import TheButton from '../ui/TheButton'
 import TheButtonIcon from '../ui/TheButtonIcon'
@@ -63,10 +63,11 @@ export default function Room () {
     })
   }
 
-  if (roomCloseAt) {
-    history.push('/')
-    return null
-  }
+  useEffect(() => {
+    if (roomCloseAt) {
+      history.push('/')
+    }
+  }, [history, roomCloseAt])
 
   return (
     <React.Fragment>

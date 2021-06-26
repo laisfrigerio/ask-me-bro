@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useParams, useHistory } from "react-router-dom"
 import { useAuth } from "../hooks/useAuth"
 import { useRoom } from "../hooks/useRoom"
@@ -8,6 +8,7 @@ import TheButton from '../ui/TheButton'
 import TheButtonIcon from '../ui/TheButtonIcon'
 import TheHeader from '../ui/TheHeader'
 import TheMainContent from '../ui/TheMainContent'
+import TheSpinner from '../ui/TheSpinner'
 import Question from '../components/Question'
 import RoomTitle from '../components/RoomTitle'
 
@@ -37,9 +38,21 @@ export default function AdminRoom () {
     history.push('/')
   }
 
-  if (roomCloseAt) {
-    history.push('/')
-    return null
+  useEffect(() => {
+    if (roomCloseAt) {
+      history.push('/')
+    }
+  }, [history, roomCloseAt])
+
+  if (!user || !roomAuthorId) {
+    return (
+      <React.Fragment>
+        <TheHeader></TheHeader>
+        <TheMainContent className="is-loading">
+          <TheSpinner />
+        </TheMainContent>
+      </React.Fragment>
+    )
   }
 
   return (
