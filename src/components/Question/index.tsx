@@ -7,9 +7,19 @@ type ParamsType = QuestionType & {
   children: ReactNode,
 }
 
-export default function Question ({ author, children, content }: ParamsType) {
+export default function Question ({ author, children, content, isAnswered = false, isHighlighted = false }: ParamsType) {
+	let className = 'question'
+
+	if (isAnswered) {
+		className += ` is-answered`
+	}
+
+	if (isHighlighted && !isAnswered) {
+		className += ` is-highlighted`
+	}
+
 	return (
-		<QuestionWrapper className="question">
+		<QuestionWrapper className={className}>
 			<p>{content}</p>
 			<footer>
 				<UserInfo name={author.name} avatar={author.avatar} />

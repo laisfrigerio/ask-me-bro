@@ -52,6 +52,11 @@ const TheMainContentWrapper = styled.main`
 		margin-top: 32px;
 	}
 
+	.room-options {
+		display: flex;
+		gap: 8px;
+	}
+
 	.btn-as-link {
 		background: transparent;
 		border: 0;
