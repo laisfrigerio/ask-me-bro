@@ -16,7 +16,6 @@ export default function AddRoom () {
 
   async function handleAddRoom (event: FormEvent) {
     event.preventDefault()
-    
 
     if (roomName.trim() === '') {
       return

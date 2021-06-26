@@ -25,6 +25,14 @@ const TheAsideWrapper = styled.aside`
 		margin-top: 16px;
 		color: #f8f8f8;
 	}
+
+	@media screen and (max-width: 888px) {
+		height: 550px;
+
+		img {
+			height: 200px;
+		}
+	}
 `
 
 export default TheAsideWrapper
