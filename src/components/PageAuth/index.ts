@@ -70,7 +70,7 @@ const PageAuth = styled.div`
 		h2 {
 			font-family: 'Poppins', sans-serif;
 			font-size: 24px;
-			margin: 64px 0 24px;
+			margin: 32px 0 24px;
 		}
 
 		p {
@@ -81,6 +81,14 @@ const PageAuth = styled.div`
 			a {
 				color: #e559f9;
 			}
+		}
+	}
+
+	@media screen and (max-width: 888px) {
+		flex-direction: column;
+
+		main {
+			padding: 60px 0;
 		}
 	}
 `

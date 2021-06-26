@@ -20,6 +20,7 @@ const TheButtonWrapper = styled.button`
 
   &.btn-google {
     background: #ea4335;
+    margin-top: 20px;
   }
 
   &.outline {
