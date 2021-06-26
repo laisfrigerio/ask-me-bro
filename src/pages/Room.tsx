@@ -8,11 +8,12 @@ import TheMainContent from '../ui/TheMainContent'
 import TheSpinner from '../ui/TheSpinner'
 
 import Question from '../components/Question'
+import RoomClosed from '../components/RoomClosed'
 import RoomTitle from '../components/RoomTitle'
 import UserInfo from '../components/UserInfo'
-import { useAuth } from "../hooks/useAuth"
-import { useRoom } from "../hooks/useRoom"
-import { database } from "../services/firebase"
+import { useAuth } from '../hooks/useAuth'
+import { useRoom } from '../hooks/useRoom'
+import { database } from '../services/firebase'
 
 type ParamsType = {
   id: string
@@ -77,14 +78,7 @@ export default function Room () {
   }
 
   if (roomCloseAt) {
-    return (
-      <React.Fragment>
-        <TheHeader></TheHeader>
-        <TheMainContent>
-          <h2>Sala fechada</h2>
-        </TheMainContent>
-      </React.Fragment>
-    )
+    return <RoomClosed />
   }
 
   return (

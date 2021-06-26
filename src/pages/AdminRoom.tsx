@@ -10,6 +10,7 @@ import TheHeader from '../ui/TheHeader'
 import TheMainContent from '../ui/TheMainContent'
 import TheSpinner from '../ui/TheSpinner'
 import Question from '../components/Question'
+import RoomClosed from '../components/RoomClosed'
 import RoomTitle from '../components/RoomTitle'
 
 type ParamsType = {
@@ -50,14 +51,7 @@ export default function AdminRoom () {
   }
 
   if (roomCloseAt) {
-    return (
-      <React.Fragment>
-        <TheHeader></TheHeader>
-        <TheMainContent>
-          <h2>Sala fechada</h2>
-        </TheMainContent>
-      </React.Fragment>
-    )
+    return <RoomClosed />
   }
 
   return (
