@@ -5,8 +5,8 @@ import TheButton from '../ui/TheButton'
 import TheButtonIcon from '../ui/TheButtonIcon'
 import TheHeader from '../ui/TheHeader'
 import TheMainContent from '../ui/TheMainContent'
-import TheSpinner from '../ui/TheSpinner'
 
+import LoadingContent from '../components/LoadingContent'
 import Question from '../components/Question'
 import RoomClosed from '../components/RoomClosed'
 import RoomTitle from '../components/RoomTitle'
@@ -67,14 +67,7 @@ export default function Room () {
   }
 
   if (!user || roomIsLoading) {
-    return (
-      <React.Fragment>
-        <TheHeader></TheHeader>
-        <TheMainContent className="is-loading">
-          <TheSpinner />
-        </TheMainContent>
-      </React.Fragment>
-    )
+    return <LoadingContent />
   }
 
   if (roomCloseAt) {
