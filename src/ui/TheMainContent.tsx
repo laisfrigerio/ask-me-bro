@@ -7,28 +7,6 @@ const Wrapper = styled.main`
 	max-width: 800px;
 	padding: 0 15px;
 
-	.title-01 {
-		color: #29292e;
-		font-family: 'Poppins', sans-serif;
-		font-size: 24px;
-	}
-
-	.room-title {
-		align-items: center;
-		display: flex;
-		margin: 32px 0 24px;
-
-		> span {
-			background: #e559f9;
-			border-radius: 9999px;
-			color: #fff;
-			font-size: 14px;
-			font-weight: 500;
-			margin-left: 16px;
-			padding: 8px 16px;
-		}
-	}
-
 	form {
 		textarea {
 			background: #fefefe;
@@ -52,25 +30,11 @@ const Wrapper = styled.main`
 				font-size: 14px;
 				font-weight: 500;
 			}
-
-			.user-info {
-				align-items: center;
-				display: flex;
-				
-				img {
-					border-radius: 50%;
-					height: 32px;
-					width: 32px;
-				}
-
-				span {
-					color: #29292e;
-					font-size: 14px;
-					font-weight: 500;
-					margin-left: 8px;
-				}
-			}
 		}
+	}
+
+	.question-list {
+		margin-top: 32px;
 	}
 
 	.btn-as-link {

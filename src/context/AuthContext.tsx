@@ -1,26 +1,6 @@
-import React, { createContext, ReactNode, useState, useEffect } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
+import { AuthContextProviderType, AuthContextType, UserGoogleType, UserType } from '../const/types'
 import { firebase, auth } from '../services/firebase'
-
-type UserGoogleType = {
-	uid: string,
-  displayName: string,
-  photoURL: string
-}
-
-type UserType = {
-  id: string,
-  name: string,
-  avatar: string
-}
-
-type AuthContextType = {
-	user: UserType | undefined,
-  signInWithGoogle: () => Promise<void>
-}
-
-type AuthContextProviderType = {
-	children: ReactNode
-}
 
 export const AuthContext = createContext({} as AuthContextType)
 

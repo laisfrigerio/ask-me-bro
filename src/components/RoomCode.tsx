@@ -33,13 +33,13 @@ const Wrapper = styled.button`
 	}
 `
 
-type RoomCodeType = {
+type ParamsType = {
 	code: string
 }
 
-export default function RoomCode (props: RoomCodeType) {
+export default function RoomCode ({ code }: ParamsType) {
 	function copyToClipboard () {
-		navigator.clipboard.writeText(props.code)
+		navigator.clipboard.writeText(code)
 	}
 
 	return (
@@ -47,7 +47,7 @@ export default function RoomCode (props: RoomCodeType) {
 			<div>
 				<img src={copyImg} alt="Copy room code to clipboard" />
 			</div>
-			<span>Sala #{props.code}</span>
+			<span>Sala #{code}</span>
 		</Wrapper>
 	)
 }
