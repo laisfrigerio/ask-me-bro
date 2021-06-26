@@ -7,15 +7,15 @@
 Toda pergunta tem uma resposta. Aprenda e compartilhe conhecimento com outras pessoas!!!
 
 <p align="center">
-  <a><img src="./screenshots/home.png" alt="Home Page screenshot - Login with Google"></a>
+  <a><img src="./screenshots/02-home.png" alt="Home Page screenshot - Login with Google"></a>
 </p>
 
 <p align="center">
-  <a><img src="./screenshots/add-room.png" alt="Add Room Page screenshot - to create a new room"></a>
+  <a><img src="./screenshots/02-add-room.png" alt="Add Room Page screenshot - to create a new room"></a>
 </p>
 
 <p align="center">
-  <a><img src="./screenshots/room-without-questions.png" alt="Screenshot from a room without questions"></a>
+  <a><img src="./screenshots/02-room-without-questions.png" alt="Screenshot from a room without questions"></a>
 </p>
 
 ## 🛠️ Stack
