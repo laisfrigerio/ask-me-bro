@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import UserInfo from './UserInfo'
 import { QuestionType } from '../const/types'
@@ -32,13 +32,19 @@ const Wrapper = styled.div`
 	}
 `
 
-export default function Question ({ author, content }: QuestionType) {
+type ParamsType = QuestionType & {
+  children: ReactNode,
+}
+
+export default function Question ({ author, children, content }: ParamsType) {
 	return (
 		<Wrapper className="question">
 			<p>{content}</p>
 			<footer>
 				<UserInfo name={author.name} avatar={author.avatar} />
-				<div></div>
+				<div>
+					{ children }
+				</div>
 			</footer>
 		</Wrapper>
 	)

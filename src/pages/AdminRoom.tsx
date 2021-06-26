@@ -23,7 +23,9 @@ export default function AdminRoom () {
           questions={questions}
           roomName={roomName}
         />
-        <ListQuestion questions={questions} />
+        <ListQuestion questions={questions}>
+          test
+        </ListQuestion>
       </TheMainContent>
     </React.Fragment>
   )
