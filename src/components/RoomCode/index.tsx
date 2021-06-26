@@ -13,7 +13,7 @@ export default function RoomCode ({ code }: ParamsType) {
 
 	return (
 		<RoomCodeWrapper onClick={copyToClipboard}>
-			<div>
+			<div title="Copy room code to clipboard">
 				<img src={copyImg} alt="Copy room code to clipboard" />
 			</div>
 			<span>Sala #{code}</span>

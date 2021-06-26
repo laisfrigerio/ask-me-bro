@@ -9,7 +9,7 @@ const RoomCodeWrapper = styled.button`
 	height: 40px;
 	overflow: hidden;
 
-	div {
+	> div {
 		align-items: center;
 		background: #835afd;
 		display: flex;
@@ -22,12 +22,18 @@ const RoomCodeWrapper = styled.button`
 		}
 	}
 
-	span {
+	> span {
 		align-self: center;
 		display: block;
 		flex: 1;
 		padding: 0 16px 0 12px;
 		width: 260px;
+	}
+
+	@media screen and (max-width: 654px) {
+		> span {
+			display: none;
+		}
 	}
 `
 
