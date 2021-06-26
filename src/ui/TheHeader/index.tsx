@@ -1,9 +1,9 @@
 
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import logoImg from '../../assets/images/logo.svg'
-import RoomCode from '../../components/RoomCode'
 import TheHeaderWrapper from './styles'
+import RoomCode from '../../components/RoomCode'
+import logoImg from '../../assets/images/logo-ask-me-bro.svg'
 
 type ParamsType = {
 	id: string

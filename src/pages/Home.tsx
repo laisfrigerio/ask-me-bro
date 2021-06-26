@@ -7,7 +7,7 @@ import TheButton from '../ui/TheButton'
 
 import { database } from '../services/firebase'
 
-import logoImg from '../assets/images/logo.svg'
+import logoImg from '../assets/images/logo-ask-me-bro.svg'
 import goggleIconImg from '../assets/images/google-icon.svg'
 
 export default function Home () {
