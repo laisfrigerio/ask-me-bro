@@ -12,14 +12,20 @@ const RoomTitleWrapper  = styled.div`
 	}
 
 
-	> span {
+	> div {
 		background: #e559f9;
 		border-radius: 9999px;
 		color: #fff;
 		font-size: 14px;
-		font-weight: 500;
+		font-weight: 600;
 		margin-left: 16px;
 		padding: 8px 16px;
+	}
+
+	@media screen and (max-width: 654px) {
+		span {
+			display: none;
+		}
 	}
 `
 
