@@ -1,11 +1,26 @@
-
-import React from 'react'
 import styled from 'styled-components'
 
-const Wrapper = styled.main`
+const TheMainContentWrapper = styled.main`
 	margin: 0 auto;
 	max-width: 800px;
 	padding: 0 15px;
+
+	&.room-is-closed,
+	&.is-loading {
+		align-items: center;
+		display: flex;
+    justify-content: center;
+    margin-top: 100px;
+	}
+
+	&.room-is-closed {
+    flex-direction: column;
+		h2 {
+			color: #989898;
+			font-family: 'Poppins', sans-serif;
+			margin-bottom: 20px;
+		}
+	}
 
 	form {
 		textarea {
@@ -37,6 +52,11 @@ const Wrapper = styled.main`
 		margin-top: 32px;
 	}
 
+	.room-options {
+		display: flex;
+		gap: 8px;
+	}
+
 	.btn-as-link {
 		background: transparent;
 		border: 0;
@@ -45,11 +65,4 @@ const Wrapper = styled.main`
 		text-decoration: 14px;
 	}
 `
-
-export default function Header (props: { children: React.ReactNode }) {
-	return (
-		<Wrapper>
-			{props.children}
-		</Wrapper>
-	)
-}
+export default TheMainContentWrapper

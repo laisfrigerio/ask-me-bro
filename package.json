@@ -1,6 +1,6 @@
 {
   "name": "ask-me-bro",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": true,
   "dependencies": {
     "@testing-library/react": "^11.1.0",
