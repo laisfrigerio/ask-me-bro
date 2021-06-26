@@ -27,7 +27,7 @@ const RoomCodeWrapper = styled.button`
 		display: block;
 		flex: 1;
 		padding: 0 16px 0 12px;
-		width: 260px;
+		width: auto;
 	}
 
 	@media screen and (max-width: 654px) {

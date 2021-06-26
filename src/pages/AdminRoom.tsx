@@ -10,6 +10,7 @@ import TheButtonIcon from '../ui/TheButtonIcon'
 import TheHeader from '../ui/TheHeader'
 import TheMainContent from '../ui/TheMainContent'
 
+import EmptyQuestionList from '../components/EmptyQuestionList'
 import LoadingContent from '../components/LoadingContent'
 import Question from '../components/Question'
 import RoomClosed from '../components/RoomClosed'
@@ -81,6 +82,7 @@ export default function AdminRoom () {
           questions={questions}
           roomName={roomName}
         />
+        <EmptyQuestionList questions={questions} />
         <div className="question-list">
           {questions.map((question) => {
             return (
