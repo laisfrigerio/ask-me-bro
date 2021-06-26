@@ -5,9 +5,10 @@ import PageAuth from '../components/PageAuth'
 import TheAside from '../ui/TheAside'
 import TheButton from '../ui/TheButton'
 
-import logoImg from '../assets/images/logo.svg'
 import { database } from '../services/firebase'
 import { useAuth } from '../hooks/useAuth'
+
+import logoImg from '../assets/images/logo-ask-me-bro.svg'
 
 export default function AddRoom () {
   const { user } = useAuth()
