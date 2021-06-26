@@ -94,6 +94,7 @@ export default function Room () {
               content={question.content}
             >
               <TheButtonIcon
+                aria-label="Curtir pergunta"
                 className={`btn-like ${question.likeId ? 'liked' : ''}`}
                 onClick={() => handleLikeQuestion(question.id, question.likeId)}
               >
