@@ -1,9 +1,12 @@
-import React, { FormEvent, useEffect, useState } from "react"
-import { useParams, useHistory } from "react-router-dom"
+import React, { FormEvent, useState } from 'react'
+import { useParams } from 'react-router-dom'
+
 import TheButton from '../ui/TheButton'
 import TheButtonIcon from '../ui/TheButtonIcon'
 import TheHeader from '../ui/TheHeader'
 import TheMainContent from '../ui/TheMainContent'
+import TheSpinner from '../ui/TheSpinner'
+
 import Question from '../components/Question'
 import RoomTitle from '../components/RoomTitle'
 import UserInfo from '../components/UserInfo'
@@ -16,11 +19,10 @@ type ParamsType = {
 }
 
 export default function Room () {
-  const history = useHistory()
   const params = useParams<ParamsType>()
   const roomId = params.id
   const { user } = useAuth()
-  const { questions, roomCloseAt, roomName } = useRoom(roomId)
+  const { questions, roomCloseAt, roomIsLoading, roomName } = useRoom(roomId)
   const [question, setQuestion] = useState('')
 
   async function handleAddQuestion (event: FormEvent) {
@@ -63,11 +65,27 @@ export default function Room () {
     })
   }
 
-  useEffect(() => {
-    if (roomCloseAt) {
-      history.push('/')
-    }
-  }, [history, roomCloseAt])
+  if (!user || roomIsLoading) {
+    return (
+      <React.Fragment>
+        <TheHeader></TheHeader>
+        <TheMainContent className="is-loading">
+          <TheSpinner />
+        </TheMainContent>
+      </React.Fragment>
+    )
+  }
+
+  if (roomCloseAt) {
+    return (
+      <React.Fragment>
+        <TheHeader></TheHeader>
+        <TheMainContent>
+          <h2>Sala fechada</h2>
+        </TheMainContent>
+      </React.Fragment>
+    )
+  }
 
   return (
     <React.Fragment>

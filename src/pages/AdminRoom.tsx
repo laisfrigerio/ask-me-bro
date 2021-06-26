@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { useParams, useHistory } from "react-router-dom"
 import { useAuth } from "../hooks/useAuth"
 import { useRoom } from "../hooks/useRoom"
@@ -22,7 +22,7 @@ export default function AdminRoom () {
   const roomId = params.id
 
   const { user } = useAuth()
-  const { questions, roomAuthorId, roomCloseAt, roomName } = useRoom(roomId)
+  const { questions, roomAuthorId, roomCloseAt, roomIsLoading, roomName } = useRoom(roomId)
 
   async function handleRemoveQuestion (questionId: string | undefined) {
     if (window.confirm('Tem certeza que você deseja excluir esta pergunta?')) {
@@ -38,18 +38,23 @@ export default function AdminRoom () {
     history.push('/')
   }
 
-  useEffect(() => {
-    if (roomCloseAt) {
-      history.push('/')
-    }
-  }, [history, roomCloseAt])
-
-  if (!user || !roomAuthorId) {
+  if (!user || roomIsLoading) {
     return (
       <React.Fragment>
         <TheHeader></TheHeader>
         <TheMainContent className="is-loading">
           <TheSpinner />
+        </TheMainContent>
+      </React.Fragment>
+    )
+  }
+
+  if (roomCloseAt) {
+    return (
+      <React.Fragment>
+        <TheHeader></TheHeader>
+        <TheMainContent>
+          <h2>Sala fechada</h2>
         </TheMainContent>
       </React.Fragment>
     )
