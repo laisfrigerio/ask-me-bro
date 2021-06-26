@@ -36,7 +36,9 @@ export type QuestionType = {
   },
   content: string,
   isHighlighted?: boolean,
-  isAnswered?: boolean,
+	isAnswered?: boolean,
+	likeCount?: number,
+	likeId?: string,
 }
 
 export type UserGoogleType = {

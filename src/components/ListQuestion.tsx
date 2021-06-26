@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react'
-import Question from './Question'
 import { QuestionType } from '../const/types'
 
 type ParamsType = {
@@ -12,13 +11,7 @@ export default function ListQuestion ({ children, questions }: ParamsType) {
 		<div className="question-list">
 			{questions.map((question: QuestionType) => {
 				return (
-					<Question
-						key={question.id}
-						author={question.author}  
-						content={question.content}
-					>
-						{children}
-					</Question>
+					<div>{children}</div>
 				)
 			})}
 		</div>
