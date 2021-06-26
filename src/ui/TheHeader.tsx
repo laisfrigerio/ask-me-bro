@@ -1,7 +1,9 @@
 
 import React from 'react'
-import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
+import { useParams } from 'react-router-dom'
+import { useAuth } from '../hooks/useAuth'
+import { useRoom } from '../hooks/useRoom'
 import logoImg from '../assets/images/logo.svg'
 import RoomCode from '../components/RoomCode'
 import TheButton from '../ui/TheButton'
@@ -38,6 +40,8 @@ type ParamsType = {
 
 export default function Header () {
 	const params = useParams<ParamsType>()
+	const { user } = useAuth()
+	const { roomAuthorId } = useRoom(params.id)
 
 	return (
 		<Wrapper>
@@ -45,7 +49,9 @@ export default function Header () {
 				<img src={logoImg} alt="Let Me Ask" />
 				<div>
 					<RoomCode code={params.id} />
-					<TheButton isOutlined>Encerrar</TheButton>
+					{user?.id === roomAuthorId && (
+						<TheButton isOutlined>Encerrar</TheButton>
+					)}
 				</div>
 			</div>
 		</Wrapper>

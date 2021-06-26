@@ -1,5 +1,6 @@
 import React from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useHistory } from "react-router-dom"
+import { useAuth } from "../hooks/useAuth"
 import { useRoom } from "../hooks/useRoom"
 import { database } from "../services/firebase"
 
@@ -16,7 +17,14 @@ type ParamsType = {
 export default function AdminRoom () {
   const params = useParams<ParamsType>()
   const roomId = params.id
-  const { questions, roomName } = useRoom(roomId)
+  const history = useHistory()
+  const { user } = useAuth()
+  const { questions, roomName, roomAuthorId } = useRoom(roomId)
+
+  if (!user || user.id !== roomAuthorId) {
+    history.push('/')
+    return null
+  }
 
   async function handleRemoveQuestion (questionId: string | undefined) {
     if (window.confirm('Tem certeza que você deseja excluir esta pergunta?')) {
