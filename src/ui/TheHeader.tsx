@@ -1,9 +1,10 @@
 
 import React from 'react'
+import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import logoImg from '../assets/images/logo.svg'
 import RoomCode from '../components/RoomCode'
-import { useParams } from 'react-router-dom'
+import TheButton from '../ui/TheButton'
 
 const Wrapper = styled.header`
 	border-bottom: 1px solid #e2e2e2;
@@ -15,6 +16,15 @@ const Wrapper = styled.header`
 		justify-content: space-between;
 		margin: 0 auto;
 		max-width: 1120px;
+
+		> div {
+			display: flex;
+			gap: 16px;
+
+			button {
+				height: 40px;
+			}
+		}
 
 		> img {
 			max-height: 45px;
@@ -33,7 +43,10 @@ export default function Header () {
 		<Wrapper>
 			<div className="content">
 				<img src={logoImg} alt="Let Me Ask" />
-				<RoomCode code={params.id} />
+				<div>
+					<RoomCode code={params.id} />
+					<TheButton isOutlined>Encerrar</TheButton>
+				</div>
 			</div>
 		</Wrapper>
 	)

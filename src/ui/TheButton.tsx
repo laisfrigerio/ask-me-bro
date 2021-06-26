@@ -24,6 +24,12 @@ const Wrapper = styled.button`
     background: #ea4335;
   }
 
+  &.outline {
+    background: #fff;
+    border: 1px solid #835afd;
+    color: #835afd;
+  }
+
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
@@ -34,9 +40,16 @@ const Wrapper = styled.button`
   }
 `
 
-export default function TheButton (props: ButtonHTMLAttributes<HTMLButtonElement>) {
+type ButtonType = ButtonHTMLAttributes<HTMLButtonElement> & {
+  isOutlined?: boolean,
+}
+
+export default function TheButton ({ isOutlined = false, ...props }: ButtonType) {
   return (
-    <Wrapper className="btn" {...props}>
+    <Wrapper
+      className={`btn ${isOutlined ? 'outline' : ''}`}
+      {...props}
+    >
       {props.children}
     </Wrapper>
   )
