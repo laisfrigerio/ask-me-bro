@@ -1,5 +1,5 @@
 import React from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useHistory } from "react-router-dom"
 import { useAuth } from "../hooks/useAuth"
 import { useRoom } from "../hooks/useRoom"
 import { database } from "../services/firebase"
@@ -16,10 +16,12 @@ type ParamsType = {
 }
 
 export default function AdminRoom () {
+  const history = useHistory()
   const params = useParams<ParamsType>()
   const roomId = params.id
+
   const { user } = useAuth()
-  const { questions, roomName, roomAuthorId } = useRoom(roomId)
+  const { questions, roomAuthorId, roomCloseAt, roomName } = useRoom(roomId)
 
   async function handleRemoveQuestion (questionId: string | undefined) {
     if (window.confirm('Tem certeza que você deseja excluir esta pergunta?')) {
@@ -27,11 +29,27 @@ export default function AdminRoom () {
     }
   }
 
+  async function handleShutDownRoom () {
+    await database.ref(`rooms/${roomId}`).update({
+      closeAt: new Date()
+    })
+
+    history.push('/')
+  }
+
+  if (roomCloseAt) {
+    history.push('/')
+    return null
+  }
+
   return (
     <React.Fragment>
       <TheHeader>
         {user?.id === roomAuthorId && (
-          <TheButton isOutlined>Encerrar</TheButton>
+          <TheButton
+            isOutlined
+            onClick={handleShutDownRoom}
+          >Encerrar</TheButton>
         )}
       </TheHeader>
       <TheMainContent>

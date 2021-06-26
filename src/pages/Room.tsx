@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useHistory } from "react-router-dom"
 import TheButton from '../ui/TheButton'
 import TheButtonIcon from '../ui/TheButtonIcon'
 import TheHeader from '../ui/TheHeader'
@@ -16,10 +16,11 @@ type ParamsType = {
 }
 
 export default function Room () {
+  const history = useHistory()
   const params = useParams<ParamsType>()
   const roomId = params.id
   const { user } = useAuth()
-  const { questions, roomName } = useRoom(roomId)
+  const { questions, roomCloseAt, roomName } = useRoom(roomId)
   const [question, setQuestion] = useState('')
 
   async function handleAddQuestion (event: FormEvent) {
@@ -60,6 +61,11 @@ export default function Room () {
     await database.ref(`rooms/${roomId}/questions/${questionId}/likes`).push({
       authorId: user?.id
     })
+  }
+
+  if (roomCloseAt) {
+    history.push('/')
+    return null
   }
 
   return (
