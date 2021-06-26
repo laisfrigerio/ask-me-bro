@@ -8,6 +8,7 @@ export function useRoom (roomId: string) {
   const [questions, setQuestions] = useState<QuestionType[]>([])
   const [roomName, setRoomName] = useState('')
   const [roomAuthorId, setRoomAuthorId] = useState('')
+  const [roomCloseAt, setRoomCloseAt] = useState(null)
 
   useEffect(() => {
     const roomRef = database.ref(`rooms/${roomId}`)
@@ -28,6 +29,7 @@ export function useRoom (roomId: string) {
         }
       })
 
+      setRoomCloseAt(databaseRoom.closeAt || null)
       setRoomAuthorId(databaseRoom.authorId)
       setRoomName(databaseRoom.name)
       setQuestions(parsedQuestions)
@@ -37,6 +39,7 @@ export function useRoom (roomId: string) {
   return {
     questions,
     roomAuthorId,
+    roomCloseAt,
     roomName
   }
 }

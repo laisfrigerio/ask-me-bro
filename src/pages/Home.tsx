@@ -37,6 +37,11 @@ export default function Home () {
       return
     }
 
+    if (ref.val().closeAt) {
+      alert('Room already closed')
+      return
+    }
+
     history.push(`/rooms/${roomCode}`)
   }
 
