@@ -56,6 +56,7 @@ export default function Room () {
   async function handleLikeQuestion (questionId: string | undefined, likeId: string | undefined) {
     if (!user) {
       alert('You must logged in before send questions')
+      return
     }
 
     if (likeId) {
@@ -68,7 +69,7 @@ export default function Room () {
     })
   }
 
-  if (!user || roomIsLoading) {
+  if (roomIsLoading) {
     return <LoadingContent />
   }
 
@@ -97,7 +98,7 @@ export default function Room () {
             {!user && (
               <p>Para enviar uma pergunta, <a className="btn-as-link" href="#login">Faça seu login</a></p>
             )}
-            <TheButton>Enviar pergunta</TheButton>
+            <TheButton disabled={!user || question === ''}>Enviar pergunta</TheButton>
           </div>
         </form>
         <EmptyQuestionList questions={questions} />

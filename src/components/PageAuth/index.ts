@@ -15,14 +15,14 @@ const PageAuth = styled.div`
 
 	.separator {
 		align-items: center;
-		color: #a8a8b3;
+		color: ${({ theme }) => theme.separator};
 		display: flex;
 		font-size: 14px;
 		margin: 32px 0;
 
 		&:after,
 		&:before  {
-			background: #a8a8b3;
+			background: ${({ theme }) => theme.separator};
 			content: '';
 			flex: 1;
 			height: 1px
@@ -51,8 +51,8 @@ const PageAuth = styled.div`
 
 		form {
 			input {
-				background: #fff;
-				border: 1px solid #a8a8b3;
+				background: ${({ theme }) => theme.input};
+				border: 1px solid ${({ theme }) => theme.inputBorder};
 				border-radius: 8px;
 				height: 58px;
 				padding: 0 16px;

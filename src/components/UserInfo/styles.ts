@@ -11,7 +11,7 @@ const UserInfoWrapper = styled.div`
 	}
 
 	span {
-		color: #29292e;
+		color: ${({ theme }) => theme.gray03};
 		font-size: 14px;
 		font-weight: 500;
 		margin-left: 8px;
