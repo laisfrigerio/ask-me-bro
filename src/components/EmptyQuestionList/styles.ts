@@ -18,7 +18,7 @@ const EmptyQuestionListWrapper = styled.div`
 	}
 
 	small {
-		color: #C4C4C4;
+		color: ${({ theme }) => theme.gray01};
 		font-size: 14px;
 		line-height: 21px;
 		margin-top: 5px;

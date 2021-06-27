@@ -1,19 +1,25 @@
 import React from 'react'
+import {ThemeProvider} from "styled-components";
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import './services/firebase'
 
 import { AuthContextProvider } from './context/AuthContext'
 import GlobalStyle from './global/style'
+import { lightTheme, darkTheme } from './global/theme'
+import  useTheme from './hooks/useTheme'
 
 import PageAddRoom from './pages/AddRoom'
 import PageAdminRoom from './pages/AdminRoom'
 import PageRoom from './pages/Room'
 import PageHome from './pages/Home'
 
+import './services/firebase'
+
 function App() {
+  const [theme] = useTheme()
+  const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
   return (
-    <React.Fragment>
+    <ThemeProvider theme={themeMode}>
       <GlobalStyle />
       <BrowserRouter>
         <AuthContextProvider>
@@ -25,7 +31,7 @@ function App() {
           </Switch>
         </AuthContextProvider>
       </BrowserRouter>
-    </React.Fragment>
+    </ThemeProvider>
   )
 }
 

@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 const RoomCodeWrapper = styled.button`
-	background: #fff;
-	border: 1px solid #835afd;
+	background: transparent;
+	border: 1px solid ${({ theme }) => theme.buttonDefaultColor};
 	border-radius: 8px;
 	cursor: pointer;
 	display: flex;
@@ -11,7 +11,7 @@ const RoomCodeWrapper = styled.button`
 
 	> div {
 		align-items: center;
-		background: #835afd;
+		background: ${({ theme }) => theme.buttonDefaultColor};
 		display: flex;
 		height: 100%;
 		justify-content: center;
@@ -24,6 +24,7 @@ const RoomCodeWrapper = styled.button`
 
 	> span {
 		align-self: center;
+		color: ${({ theme }) => theme.buttonCopyClipboardTitle};
 		display: block;
 		flex: 1;
 		padding: 0 16px 0 12px;

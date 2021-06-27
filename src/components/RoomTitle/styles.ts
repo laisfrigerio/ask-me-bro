@@ -6,16 +6,16 @@ const RoomTitleWrapper  = styled.div`
 	margin: 32px 0 24px;
 
 	.title-01 {
-		color: #29292e;
+		color: ${({ theme }) => theme.title01};
 		font-family: 'Poppins', sans-serif;
 		font-size: 24px;
 	}
 
 
 	> div {
-		background: #e559f9;
+		background: ${({ theme }) => theme.rose};
 		border-radius: 9999px;
-		color: #fff;
+		color: ${({ theme }) => theme.white};
 		font-size: 14px;
 		font-weight: 600;
 		margin-left: 16px;
