@@ -13,7 +13,7 @@ import TheMainContent from '../ui/TheMainContent'
 import EmptyQuestionList from '../components/EmptyQuestionList'
 import LoadingContent from '../components/LoadingContent'
 import Question from '../components/Question'
-import RoomClosed from '../components/RoomClosed'
+import AlertMessage from '../components/AlertMessage'
 import RoomTitle from '../components/RoomTitle'
 
 type ParamsType = {
@@ -26,7 +26,7 @@ export default function AdminRoom () {
   const roomId = params.id
 
   const { user } = useAuth()
-  const { questions, roomAuthorId, roomCloseAt, roomIsLoading, roomName } = useRoom(roomId)
+  const { questions, roomAuthorId, roomCloseAt, roomIsLoading, roomName, roomNotFound } = useRoom(roomId)
 
   async function handleRemoveQuestion (questionId: string | undefined) {
     if (window.confirm('Tem certeza que você deseja excluir esta pergunta?')) {
@@ -58,8 +58,12 @@ export default function AdminRoom () {
     return <LoadingContent />
   }
 
+  if (roomNotFound) {
+    return <AlertMessage label="Sala não encontrada" />
+  }
+
   if (roomCloseAt) {
-    return <RoomClosed />
+    return <AlertMessage />
   }
 
   return (

@@ -3,7 +3,7 @@ import TheHeader from '../../ui/TheHeader'
 import TheMainContent from '../../ui/TheMainContent'
 import imgEmptyQuestions from '../../assets/images/empty-questions.svg'
 
-export default function RoomClose ({ label = 'Sala fechada' }) {
+export default function AlertMessage ({ label = 'Sala fechada' }) {
 	return (
 		<React.Fragment>
 			<TheHeader></TheHeader>

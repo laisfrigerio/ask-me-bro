@@ -11,7 +11,7 @@ import EmptyQuestionList from '../components/EmptyQuestionList'
 import LoadingContent from '../components/LoadingContent'
 import Question from '../components/Question'
 import QuestionCounter from '../components/QuestionCounter'
-import RoomClosed from '../components/RoomClosed'
+import AlertMessage from '../components/AlertMessage'
 import RoomTitle from '../components/RoomTitle'
 import UserInfo from '../components/UserInfo'
 
@@ -75,11 +75,11 @@ export default function Room () {
   }
 
   if (roomNotFound) {
-    return <RoomClosed label="Sala não encontrada" />
+    return <AlertMessage label="Sala não encontrada" />
   }
 
   if (roomCloseAt) {
-    return <RoomClosed />
+    return <AlertMessage />
   }
 
   return (
