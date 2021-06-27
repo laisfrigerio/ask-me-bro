@@ -12,8 +12,8 @@ const QuestionWrapper = styled.div`
 	}
 
 	&.is-highlighted {
-		background: #f4f0ff;
-		border: 1px solid ${({ theme }) => theme.buttonDefaultColor};
+		background: ${({ theme }) => theme.highlighted.background};
+		border: 1px solid ${({ theme }) => theme.highlighted.border};
 		color: ${({ theme }) => theme.gray04};
 
 		.btn-highlighted {
@@ -28,11 +28,12 @@ const QuestionWrapper = styled.div`
 	}
 
 	&.is-answered {
-		background: #dbdcdd;
+		background: ${({ theme }) => theme.answered.background};
+		color: ${({ theme }) => theme.answered.color};
 	}
 
 	p {
-		color: ${({ theme }) => theme.gray04};
+		color: ${({ theme }) => theme.title01};
 	}
 
 	footer {

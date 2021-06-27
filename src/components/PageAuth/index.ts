@@ -54,6 +54,7 @@ const PageAuth = styled.div`
 				background: ${({ theme }) => theme.input};
 				border: 1px solid ${({ theme }) => theme.inputBorder};
 				border-radius: 8px;
+				color: ${({ theme }) => theme.defaultColorText};
 				height: 58px;
 				padding: 0 16px;
 			}
