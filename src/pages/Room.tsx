@@ -26,7 +26,7 @@ export default function Room () {
   const params = useParams<ParamsType>()
   const roomId = params.id
   const { user } = useAuth()
-  const { questions, roomCloseAt, roomIsLoading, roomName } = useRoom(roomId)
+  const { questions, roomCloseAt, roomIsLoading, roomName, roomNotFound } = useRoom(roomId)
   const [question, setQuestion] = useState('')
 
   async function handleAddQuestion (event: FormEvent) {
@@ -72,6 +72,10 @@ export default function Room () {
 
   if (roomIsLoading) {
     return <LoadingContent />
+  }
+
+  if (roomNotFound) {
+    return <RoomClosed label="Sala não encontrada" />
   }
 
   if (roomCloseAt) {

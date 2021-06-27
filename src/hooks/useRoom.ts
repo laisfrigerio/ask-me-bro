@@ -7,6 +7,7 @@ export function useRoom (roomId: string) {
   const { user } = useAuth()
   const [questions, setQuestions] = useState<QuestionType[]>([])
   const [roomName, setRoomName] = useState('')
+  const [roomNotFound, setRoomNotFound] = useState(false)
   const [roomAuthorId, setRoomAuthorId] = useState('')
   const [roomCloseAt, setRoomCloseAt] = useState(null)
   const [roomIsLoading, setRoomIsLoading] = useState(true)
@@ -15,8 +16,15 @@ export function useRoom (roomId: string) {
     const roomRef = database.ref(`rooms/${roomId}`)
 
     roomRef.on('value', room => {
-      const databaseRoom = room.val();
-      const firebaseQuestions: FirebaseQuestionType = databaseRoom.questions ?? {};
+      const databaseRoom = room.val()
+
+      if (!databaseRoom) {
+        setRoomIsLoading(false)
+        setRoomNotFound(true)
+        return
+      }
+
+      const firebaseQuestions: FirebaseQuestionType = databaseRoom.questions ?? {}
 
       const parsedQuestions = Object.entries(firebaseQuestions).map(([key, value]) => {
         return {
@@ -43,6 +51,7 @@ export function useRoom (roomId: string) {
     roomAuthorId,
     roomCloseAt,
     roomIsLoading,
-    roomName
+    roomName,
+    roomNotFound
   }
 }
