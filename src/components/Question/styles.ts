@@ -14,6 +14,7 @@ const QuestionWrapper = styled.div`
 	&.is-highlighted {
 		background: #f4f0ff;
 		border: 1px solid ${({ theme }) => theme.buttonDefaultColor};
+		color: ${({ theme }) => theme.gray04};
 
 		.btn-highlighted {
 			svg path {

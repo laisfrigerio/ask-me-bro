@@ -56,6 +56,7 @@ export default function Room () {
   async function handleLikeQuestion (questionId: string | undefined, likeId: string | undefined) {
     if (!user) {
       alert('You must logged in before send questions')
+      return
     }
 
     if (likeId) {

@@ -14,6 +14,7 @@ const TheAsideWrapper = styled.aside`
 	}
 
 	strong {
+		color: ${({theme}) => theme.white};
 		font: 700 36px 'Poppins', sans-serif;
 		line-height: 42px;
 		margin-top: 16px;

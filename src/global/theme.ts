@@ -9,12 +9,14 @@ export const lightTheme = {
 	gray03: '#737380',
 	gray04: '#29292e',
 	input: '#f8f8f8',
+	inputText: '',
 	secondaryBackground: '#fefefe',
 	inputBorder: '#a8a8b3',
 	red: '#E73F5D',
 	separator: '#a8a8b3',
 	title01: '#29292e',
 	rose: '#e559f9',
+	spinnerBackground: '#e2e2e2',
 	white: '#fff',
 }
 
@@ -29,11 +31,13 @@ export const darkTheme = {
 	gray03: '#b0b0b5',
 	gray04: '#29292e',
 	input: '#121212',
+	inputText: '',
 	secondaryBackground: '#191919',
 	inputBorder: '#4b4b4d',
 	red: '#E73F5D',
 	separator: '#737375',
 	title01: '#d1d1d6',
 	rose: '#e559f9',
+	spinnerBackground: '#fefefe',
 	white: '#fff',
 }
