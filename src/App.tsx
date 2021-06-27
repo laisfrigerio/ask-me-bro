@@ -8,9 +8,9 @@ import GlobalStyle from './global/style'
 import  useTheme from './hooks/useTheme'
 
 import PageAddRoom from './pages/AddRoom'
+import PageHome from './pages/Home'
 import PageAdminRoom from './pages/AdminRoom'
 import PageRoom from './pages/Room'
-import PageHome from './pages/Home'
 
 import TheButtonFloating from './ui/TheButtonFloating'
 

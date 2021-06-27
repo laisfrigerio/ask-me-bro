@@ -12,7 +12,14 @@ const TheButtonIconWrapper = styled.button`
 
 	&.btn-remove {
 		svg path {
-			stroke: ${({ theme }) => theme.red};
+			stroke: ${({ theme }) => theme.redColor};
+		}
+	}
+
+	&.btn-check,
+	&.btn-like {
+		svg path {
+			stroke: ${({ theme }) => theme.primaryColor};
 		}
 	}
 
@@ -22,10 +29,14 @@ const TheButtonIconWrapper = styled.button`
 		gap: 8px;
 
 		&.liked {
-			color: #835afd;
+			color: ${({ theme }) => theme.likeColor};
+
+			.counter {
+				color: ${({ theme }) => theme.likeColor};
+			}
 
 			svg path {
-				stroke: #835afd;
+				stroke: ${({ theme }) => theme.likeColor};
 			}
 		}
 	}

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const RoomCodeWrapper = styled.button`
 	background: transparent;
-	border: 1px solid ${({ theme }) => theme.buttonDefaultColor};
+	border: 1px solid ${({ theme }) => theme.secondaryColor};
 	border-radius: 8px;
 	cursor: pointer;
 	display: flex;
@@ -11,7 +11,7 @@ const RoomCodeWrapper = styled.button`
 
 	> div {
 		align-items: center;
-		background: ${({ theme }) => theme.buttonDefaultColor};
+		background: ${({ theme }) => theme.secondaryColor};
 		display: flex;
 		height: 100%;
 		justify-content: center;
@@ -24,7 +24,7 @@ const RoomCodeWrapper = styled.button`
 
 	> span {
 		align-self: center;
-		color: ${({ theme }) => theme.buttonCopyClipboardTitle};
+		color: ${({ theme }) => theme.primaryColor};
 		display: block;
 		flex: 1;
 		padding: 0 16px 0 12px;

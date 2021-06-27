@@ -51,10 +51,10 @@ const PageAuth = styled.div`
 
 		form {
 			input {
-				background: ${({ theme }) => theme.input};
-				border: 1px solid ${({ theme }) => theme.inputBorder};
+				background: ${({ theme }) => theme.backgroundColor};
+				border: 1px solid ${({ theme }) => theme.borderColor};
 				border-radius: 8px;
-				color: ${({ theme }) => theme.defaultColorText};
+				color: ${({ theme }) => theme.ternaryColor};
 				height: 58px;
 				padding: 0 16px;
 			}
@@ -75,12 +75,12 @@ const PageAuth = styled.div`
 		}
 
 		p {
-			color: #737380;
+			color: ${({ theme }) => theme.primaryColor};
 			font-size: 14px;
 			margin-top: 16px;
 
 			a {
-				color: #e559f9;
+				color: ${({ theme }) => theme.quartenaryColor};
 			}
 		}
 	}

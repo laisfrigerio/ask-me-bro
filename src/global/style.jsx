@@ -17,8 +17,8 @@ const GlobalStyle = createGlobalStyle`
 	}
 
   body {
-		background-color: ${({ theme }) => theme.background};
-		color: ${({ theme }) => theme.defaultColorText};
+		background-color: ${({ theme }) => theme.backgroundColor};
+		color: ${({ theme }) => theme.ternaryColor};
 		height: 100vh;
 		transition: all 0.50s linear;
 		width: 100%;
