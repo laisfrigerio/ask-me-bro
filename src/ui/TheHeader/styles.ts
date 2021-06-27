@@ -2,7 +2,7 @@
 import styled from 'styled-components'
 
 const TheHeaderWrapper = styled.header`
-	border-bottom: 1px solid #e2e2e2;
+	border-bottom: 1px solid ${({ theme }) => theme.gray02};
 	padding: 24px;
 
 	.content {

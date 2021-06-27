@@ -2,10 +2,10 @@ import styled from 'styled-components'
 
 const TheButtonWrapper = styled.button`
   align-items: center;
-  background: #835afd;
+  background: ${({ theme }) => theme.buttonDefaultColor};
   border: 0;
   border-radius: 8px;
-  color: #fff;
+  color: ${({ theme }) => theme.white};
   cursor: pointer;
   display: flex;
   font-weight: 500;
@@ -19,14 +19,14 @@ const TheButtonWrapper = styled.button`
   }
 
   &.btn-google {
-    background: #ea4335;
+    background: ${({ theme }) => theme.buttonGoogleColor};
     margin-top: 20px;
   }
 
   &.outline {
-    background: #fff;
-    border: 1px solid #835afd;
-    color: #835afd;
+    background: ${({ theme }) => theme.white};
+    border: 1px solid ${({ theme }) => theme.buttonDefaultColor};
+    color: ${({ theme }) => theme.buttonDefaultColor};
   }
 
   &:disabled {

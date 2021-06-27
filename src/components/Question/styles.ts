@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const QuestionWrapper = styled.div`
-	background: #fefefe;
+	background: ${({ theme }) => theme.secondaryBackground};
 	border: 1px solid transparent;
 	border-radius: 8px;
 	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
@@ -13,16 +13,16 @@ const QuestionWrapper = styled.div`
 
 	&.is-highlighted {
 		background: #f4f0ff;
-		border: 1px solid #835afd;
+		border: 1px solid ${({ theme }) => theme.buttonDefaultColor};
 
 		.btn-highlighted {
 			svg path {
-				stroke: #835afd;
+				stroke: ${({ theme }) => theme.buttonDefaultColor};
 			}
 		}
 
 		footer .user-info span {
-			color: #29292e;
+			color: ${({ theme }) => theme.gray04};
 		}
 	}
 
@@ -31,7 +31,7 @@ const QuestionWrapper = styled.div`
 	}
 
 	p {
-		color: #29292e;
+		color: ${({ theme }) => theme.gray04};
 	}
 
 	footer {

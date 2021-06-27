@@ -12,7 +12,7 @@ const TheButtonIconWrapper = styled.button`
 
 	&.btn-remove {
 		svg path {
-			stroke: #E73F5D;
+			stroke: ${({ theme }) => theme.red};
 		}
 	}
 

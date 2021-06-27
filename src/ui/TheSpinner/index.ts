@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 const SpinnerWrapper = styled.div`
 	animation: spin 2s linear infinite;
-	border: 16px solid #f3f3f3;
-  border-top: 16px solid #835afd;
+	border: 16px solid ${({ theme }) => theme.secondaryBackground};
+  border-top: 16px solid ${({ theme }) => theme.buttonDefaultColor};
   border-radius: 50%;
   height: 120px;
 	width: 120px;

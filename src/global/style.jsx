@@ -12,9 +12,10 @@ const GlobalStyle = createGlobalStyle`
 	}
 
   body {
-		background-color: #f8f8f8;
-		color: #29292e;
+		background-color: ${({ theme }) => theme.background};
+		color: ${({ theme }) => theme.defaultColorText};
 		height: 100vh;
+		transition: all 0.50s linear;
 		width: 100%;
   }
 

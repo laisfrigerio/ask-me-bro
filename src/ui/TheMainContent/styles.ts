@@ -24,7 +24,7 @@ const TheMainContentWrapper = styled.main`
 
 	form {
 		textarea {
-			background: #fefefe;
+			background: ${({ theme }) => theme.secondaryBackground};
 			border: 0;
 			border-radius: 8px;
 			box-shadow: 0 2px 12px rgba(0,0,0, 0.04);
@@ -41,7 +41,7 @@ const TheMainContentWrapper = styled.main`
 			margin-top: 14px;
 
 			p {
-				color: #737380;
+				color: ${({ theme }) => theme.gray03};
 				font-size: 14px;
 				font-weight: 500;
 			}

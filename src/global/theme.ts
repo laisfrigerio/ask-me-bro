@@ -1,0 +1,33 @@
+export const lightTheme = {
+	defaultColorText: '#29292e',
+	background: '#f8f8f8',
+	buttonDefaultColor: '#8257e5',
+	buttonGoogleColor: '#ea4335',
+	gray01: '#C4C4C4',
+	gray02: '#e2e2e2',
+	gray03: '#737380',
+	gray04: '#29292e',
+	input: '#f8f8f8',
+	secondaryBackground: '#fefefe',
+	inputBorder: '#a8a8b3',
+	red: '#E73F5D',
+	separator: '#a8a8b3',
+	white: '#fff',
+}
+
+export const darkTheme = {
+	defaultColorText: '#fff',
+	background: '#121214',
+	buttonDefaultColor: '#8257e5',
+	buttonGoogleColor: '#ea4335',
+	gray01: '#C4C4C4',
+	gray02: '#2b2b2b',
+	gray03: '#b0b0b5',
+	gray04: '#29292e',
+	input: '#121212',
+	secondaryBackground: '#191919',
+	inputBorder: '#4b4b4d',
+	red: '#E73F5D',
+	separator: '#737375',
+	white: '#fff',
+}

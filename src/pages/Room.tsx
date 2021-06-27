@@ -68,7 +68,7 @@ export default function Room () {
     })
   }
 
-  if (!user || roomIsLoading) {
+  if (roomIsLoading) {
     return <LoadingContent />
   }
 

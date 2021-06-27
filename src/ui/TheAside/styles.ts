@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 const TheAsideWrapper = styled.aside`
-	background-color: #835afd;
-	color: #fff;
+	background-color: ${({ theme }) => theme.buttonDefaultColor};
+	color: ${({ theme }) => theme.defaultColorText};
 	display: flex;
 	flex: 7;
 	flex-direction: column;
