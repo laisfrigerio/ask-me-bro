@@ -24,7 +24,7 @@ const TheButtonWrapper = styled.button`
   }
 
   &.outline {
-    background: ${({ theme }) => theme.white};
+    background: transparent;
     border: 1px solid ${({ theme }) => theme.buttonDefaultColor};
     color: ${({ theme }) => theme.buttonDefaultColor};
   }
