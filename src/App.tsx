@@ -8,9 +8,10 @@ import GlobalStyle from './global/style'
 import  useTheme from './hooks/useTheme'
 
 import PageAddRoom from './pages/AddRoom'
+import PageHome from './pages/Home'
 import PageAdminRoom from './pages/AdminRoom'
 import PageRoom from './pages/Room'
-import PageHome from './pages/Home'
+import PageNotFound from './pages/NotFound'
 
 import TheButtonFloating from './ui/TheButtonFloating'
 
@@ -33,6 +34,7 @@ function App() {
             <Route path="/rooms/add" component={PageAddRoom} />
             <Route path="/rooms/:id" component={PageRoom} />
             <Route path="/admin/rooms/:id" component={PageAdminRoom} />
+            <Route path="*" component={PageNotFound} />
           </Switch>
         </AuthContextProvider>
       </BrowserRouter>

@@ -18,14 +18,36 @@ Toda pergunta tem uma resposta. Aprenda e compartilhe conhecimento com outras pe
   <a><img src="./screenshots/02-room-without-questions.png" alt="Screenshot from a room without questions"></a>
 </p>
 
+<p align="center">
+  <a><img src="./screenshots/02-home-dark-mode.png" alt="Screenshot from home page with dark mode"></a>
+</p>
+
+<p align="center">
+  <a><img src="./screenshots/02-room-dark-mode.png" alt="Screenshot from a room without questions"></a>
+</p>
+
+<p align="center">
+  <a><img src="./screenshots/02-home-mobile-dark-mode.png" alt="Screenshot from home page: mobile version with dark mode"></a>
+</p>
+
+<p align="center">
+  <a><img src="./screenshots/02-room-mobile-dark-mode.png" alt="Screenshot from a room page: mobile version with dark mode"></a>
+</p>
+
+<p align="center">
+  <a><img src="./screenshots/02-room-mobile-light-mode.png" alt="Screenshot from a room page: mobile version with light mode"></a>
+</p>
+
 ## 🛠️ Stack
 
 - React, ContextApi to control state
 - Typescript
 - styled-components
-- firebase
+- Firebase with Real time database
 - Sign with Google (Firebase Authentication)
 - Git flow
+- Dark mode
+- Responsive
 
 ## Layout
 

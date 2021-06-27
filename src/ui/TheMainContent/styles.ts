@@ -28,7 +28,7 @@ const TheMainContentWrapper = styled.main`
 			border: 0;
 			border-radius: 8px;
 			box-shadow: 0 2px 12px rgba(0,0,0, 0.04);
-			color: ${({ theme }) => theme.defaultColorText};
+			color: ${({ theme }) => theme.primaryColor};
 			min-height: 130px;
 			padding: 16px;
 			resize: vertical;
@@ -61,7 +61,7 @@ const TheMainContentWrapper = styled.main`
 	.btn-as-link {
 		background: transparent;
 		border: 0;
-		color: ${({ theme }) => theme.buttonDefaultColor};
+		color: ${({ theme }) => theme.secondaryColor};
 		font-size: 14px;
 		text-decoration: 14px;
 	}

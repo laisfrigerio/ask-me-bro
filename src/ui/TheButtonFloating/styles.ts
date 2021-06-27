@@ -5,7 +5,7 @@ const TheButtonFloatingWrapper = styled.button`
 	bottom: 10px;
 	cursor: pointer;
 	height: 50px;
-	position: absolute;
+	position: fixed;
 	right: 10px;
 	transition: filter 0.2s;
 	width: 50px;

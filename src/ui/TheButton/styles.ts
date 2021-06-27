@@ -2,10 +2,10 @@ import styled from 'styled-components'
 
 const TheButtonWrapper = styled.button`
   align-items: center;
-  background: ${({ theme }) => theme.buttonDefaultColor};
+  background: ${({ theme }) => theme.secondaryColor};
   border: 0;
   border-radius: 8px;
-  color: ${({ theme }) => theme.white};
+  color: ${({ theme }) => theme.whiteColor};
   cursor: pointer;
   display: flex;
   font-weight: 500;
@@ -25,8 +25,8 @@ const TheButtonWrapper = styled.button`
 
   &.outline {
     background: transparent;
-    border: 1px solid ${({ theme }) => theme.buttonDefaultColor};
-    color: ${({ theme }) => theme.buttonDefaultColor};
+    border: 1px solid ${({ theme }) => theme.secondaryColor};
+    color: ${({ theme }) => theme.secondaryColor};
   }
 
   &:disabled {

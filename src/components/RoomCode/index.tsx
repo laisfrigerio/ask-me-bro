@@ -11,6 +11,10 @@ export default function RoomCode ({ code }: ParamsType) {
 		navigator.clipboard.writeText(code)
 	}
 
+	if (!code) {
+		return null
+	}
+
 	return (
 		<RoomCodeWrapper onClick={copyToClipboard}>
 			<div title="Copy room code to clipboard">

@@ -11,29 +11,40 @@ const QuestionWrapper = styled.div`
 		margin-top: 8px;
 	}
 
-	&.is-highlighted {
-		background: ${({ theme }) => theme.highlighted.background};
-		border: 1px solid ${({ theme }) => theme.highlighted.border};
-		color: ${({ theme }) => theme.gray04};
+	p {
+		color: ${({ theme }) => theme.ternaryColor};
+	}
 
+	.counter {
+		color: ${({ theme }) => theme.primaryColor};
+	}
+
+	&.is-highlighted {
+		background: ${({ theme }) => theme.highlightedBackground};
+		border: 1px solid ${({ theme }) => theme.highlightedBorder};
+
+		.btn-check,
+		.btn-like,
 		.btn-highlighted {
+			.counter,
+			p {
+				color: ${({ theme }) => theme.highlightedColor} !important;
+			}
+			
+			svg circle,
 			svg path {
-				stroke: ${({ theme }) => theme.buttonDefaultColor};
+				stroke: ${({ theme }) => theme.highlightedBorder};
 			}
 		}
 
 		footer .user-info span {
-			color: ${({ theme }) => theme.gray04};
+			color: ${({ theme }) => theme.highlightedBorder};
 		}
 	}
 
 	&.is-answered {
-		background: ${({ theme }) => theme.answered.background};
-		color: ${({ theme }) => theme.answered.color};
-	}
-
-	p {
-		color: ${({ theme }) => theme.title01};
+		background: ${({ theme }) => theme.gray02};
+		color: ${({ theme }) => theme.answeredColor};
 	}
 
 	footer {
@@ -45,7 +56,7 @@ const QuestionWrapper = styled.div`
 
 	.user-info {
 		span {
-			color: #737380;
+			color: ${({ theme }) => theme.primaryColor};
 			font-weight: 400;
 		}
 	}
