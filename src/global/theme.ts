@@ -18,6 +18,14 @@ export const lightTheme = {
 	rose: '#e559f9',
 	spinnerBackground: '#e2e2e2',
 	white: '#fff',
+	highlighted: {
+		background: '#f4f0ff',
+		border: '#8257e5'
+	},
+	answered: {
+		background: '#dbdcdd',
+		color: '#29292e'
+	},
 	toggleTheme: {
 		background: '#121214',
 		color: '#fff'
@@ -44,6 +52,14 @@ export const darkTheme = {
 	rose: '#e559f9',
 	spinnerBackground: '#fefefe',
 	white: '#fff',
+	highlighted: {
+		background: '#8372a7',
+		color: '#29292e'
+	},
+	answered: {
+		background: '#191919',
+		border: '#7358b3',
+	},
 	toggleTheme: {
 		background: '#f8f8f8',
 		color: '#ef9a18'
