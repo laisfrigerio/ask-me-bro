@@ -11,6 +11,11 @@ const GlobalStyle = createGlobalStyle`
 		padding: 0;
 	}
 
+	html, body {
+		overflow: hidden;
+		width: 100%;
+	}
+
   body {
 		background-color: ${({ theme }) => theme.background};
 		color: ${({ theme }) => theme.defaultColorText};

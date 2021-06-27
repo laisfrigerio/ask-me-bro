@@ -3,8 +3,8 @@ import {ThemeProvider} from "styled-components";
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import { AuthContextProvider } from './context/AuthContext'
-import GlobalStyle from './global/style'
 import { lightTheme, darkTheme } from './global/theme'
+import GlobalStyle from './global/style'
 import  useTheme from './hooks/useTheme'
 
 import PageAddRoom from './pages/AddRoom'
@@ -12,15 +12,20 @@ import PageAdminRoom from './pages/AdminRoom'
 import PageRoom from './pages/Room'
 import PageHome from './pages/Home'
 
+import TheButtonFloating from './ui/TheButtonFloating'
+
 import './services/firebase'
 
 function App() {
-  const [theme] = useTheme()
+  const { theme, themeToggler } = useTheme()
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyle />
+      <TheButtonFloating className="moon" onClick={themeToggler}>
+        <i className={`fas fa-moon`}></i>
+      </TheButtonFloating>
       <BrowserRouter>
         <AuthContextProvider>
           <Switch>

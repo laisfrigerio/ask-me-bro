@@ -9,7 +9,7 @@ export default function useTheme () {
 	}
 
 	function themeToggler () {
-			theme === 'light' ? setMode('dark') : setMode('light')
+		theme === 'light' ? setMode('dark') : setMode('light')
 	}
 
 	useEffect(() => {
@@ -17,5 +17,8 @@ export default function useTheme () {
 			localTheme && setTheme(localTheme)
 	}, [])
 
-	return [theme, themeToggler]
+	return {
+		theme,
+		themeToggler
+	}
 }

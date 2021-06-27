@@ -18,6 +18,10 @@ export const lightTheme = {
 	rose: '#e559f9',
 	spinnerBackground: '#e2e2e2',
 	white: '#fff',
+	toggleTheme: {
+		background: '#121214',
+		color: '#fff'
+	},
 }
 
 export const darkTheme = {
@@ -40,4 +44,8 @@ export const darkTheme = {
 	rose: '#e559f9',
 	spinnerBackground: '#fefefe',
 	white: '#fff',
+	toggleTheme: {
+		background: '#f8f8f8',
+		color: '#ef9a18'
+	},
 }
