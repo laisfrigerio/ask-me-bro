@@ -97,7 +97,7 @@ export default function Room () {
             {!user && (
               <p>Para enviar uma pergunta, <a className="btn-as-link" href="#login">Faça seu login</a></p>
             )}
-            <TheButton>Enviar pergunta</TheButton>
+            <TheButton disabled={!user || question === ''}>Enviar pergunta</TheButton>
           </div>
         </form>
         <EmptyQuestionList questions={questions} />
